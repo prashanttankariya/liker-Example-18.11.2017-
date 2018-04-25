@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sample</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<style type="text/css">
+		
+		i{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+
+
+		<script type="text/javascript">
+			$('document').ready(function(){
+				
+			
+				var output = "";
+				var likeCounter = 0;
+				$('button').click(function(){
+
+							//alert('hello');
+
+
+					// set the for loop
+					for(i=1;i<=20;i++){
+
+				output += "<h4>Hello id="+i+"<br /><i class='fa fa-heart-o'></i><br /></h4><span id='lk"+likeCounter+"'>"+likeCounter+"</span>";
+							
+					
+					$('#ans').html(output);		
+					//$('#like-counter').html(likeCounter);
+					$('#ans h4 i').click(function(){
+
+							var gt = $(this).html();
+							if ($(this).hasClass('fa-heart-o')) {
+									var vl = $("#lk"+likeCounter).html();
+									$(this).removeClass('fa-heart-o').addClass('fa-heart');
+									alert(vl);
+									$("#lk"+likeCounter).html(eval(vl+1));
+									
+							}	
+							else if ($(this).hasClass('fa-heart')) {
+									
+									$(this).removeClass('fa-heart').addClass('fa-heart-o');
+									
+							}	
+
+
+
+					});
+				}
+				
+				});
+			
+					
+});// main func ends
+
+
+		</script>
+
+			<div id="ans">
+				
+			</div>
+			<div id="like-counter">
+				
+			</div>
+			<button>Click</button>
+
+</body>
+</html>
